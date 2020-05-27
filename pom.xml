@@ -91,7 +91,7 @@
       <guava.version>24.1.1-jre</guava.version>
       <jboss.logging.version>3.4.0.Final</jboss.logging.version>
       <jetty.version>9.4.26.v20200117</jetty.version>
-      <jgroups.version>3.6.13.Final</jgroups.version>
+      <jgroups.version>3.6.20.Final</jgroups.version>
       <maven.assembly.plugin.version>2.4</maven.assembly.plugin.version>
       <mockito.version>2.25.0</mockito.version>
       <jctools.version>2.1.2</jctools.version>
@@ -891,7 +891,7 @@
                   <!-- version 3.2 is having problems with the APT processor resulting in
                     java.lang.IllegalStateException: endPosTable already set  -->
                   <version>3.1</version>
-                  <configuration combine.self="override" />
+                  <configuration combine.self="override"/>
                </plugin>
                <plugin>
                   <groupId>org.apache.maven.plugins</groupId>
@@ -1145,7 +1145,7 @@
          <properties>
 
             <!-- Property set by Jacoco plugin -->
-            <jacoco.agent />
+            <jacoco.agent/>
 
             <activemq-surefire-argline>-Djava.util.logging.manager=org.jboss.logmanager.LogManager
                -Dlogging.configuration="file:${activemq.basedir}/tests/config/logging.properties"
@@ -1235,63 +1235,63 @@
                         <inherited>false</inherited>
                         <configuration>
                            <target>
-                              <property name="result.report.dir" location="target/jacoco-report" />
+                              <property name="result.report.dir" location="target/jacoco-report"/>
                               <taskdef name="report" classname="org.jacoco.ant.ReportTask">
-                                 <classpath path="${project.build.directory}/jacoco-jars/org.jacoco.ant.jar" />
+                                 <classpath path="${project.build.directory}/jacoco-jars/org.jacoco.ant.jar"/>
                               </taskdef>
                               <echo>Creating JaCoCo ActiveMQ Artemis test coverage reports...</echo>
                               <report>
                                  <executiondata>
                                     <fileset dir="${basedir}">
-                                       <include name="**/target/jacoco.exec" />
+                                       <include name="**/target/jacoco.exec"/>
                                     </fileset>
                                  </executiondata>
                                  <structure name="JaCoCo ActiveMQ Artemis">
                                     <classfiles>
-                                       <fileset dir="${activemq.basedir}/artemis-boot/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-cdi-client/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-cli/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-commons/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-core-client/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-dto/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-jdbc-store/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-jms-client/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-jms-server/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-journal/target/classes" />
-                                       <fileset dir="${activemq.basedir}/activemq-artemis-native/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-ra/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-rest/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-selector/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-server/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-server-osgi/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-service-extensions/target" />
-                                       <fileset dir="${activemq.basedir}/artemis-tools/target/classes" />
-                                       <fileset dir="${activemq.basedir}/artemis-web/target/classes" />
+                                       <fileset dir="${activemq.basedir}/artemis-boot/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-cdi-client/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-cli/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-commons/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-core-client/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-dto/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jdbc-store/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jms-client/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jms-server/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-journal/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/activemq-artemis-native/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-ra/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-rest/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-selector/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-server/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-server-osgi/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-service-extensions/target"/>
+                                       <fileset dir="${activemq.basedir}/artemis-tools/target/classes"/>
+                                       <fileset dir="${activemq.basedir}/artemis-web/target/classes"/>
                                     </classfiles>
                                     <sourcefiles encoding="UTF-8">
-                                       <fileset dir="${activemq.basedir}/artemis-boot/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-cdi-client/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-cli/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-commons/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-core-client/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-dto/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-jdbc-store/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-jms-client/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-jms-server/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-journal/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/activemq-artemis-native/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-ra/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-rest/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-selector/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-server/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-server-osgi/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-service-extensions/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-tools/src/main/java" />
-                                       <fileset dir="${activemq.basedir}/artemis-web/src/main/java" />
+                                       <fileset dir="${activemq.basedir}/artemis-boot/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-cdi-client/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-cli/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-commons/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-core-client/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-dto/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jdbc-store/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jms-client/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-jms-server/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-journal/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/activemq-artemis-native/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-ra/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-rest/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-selector/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-server/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-server-osgi/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-service-extensions/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-tools/src/main/java"/>
+                                       <fileset dir="${activemq.basedir}/artemis-web/src/main/java"/>
                                     </sourcefiles>
                                  </structure>
-                                 <html destdir="\${result.report.dir}" />
-                                 <xml destfile="\${result.report.dir}/report.xml" />
+                                 <html destdir="\${result.report.dir}"/>
+                                 <xml destfile="\${result.report.dir}/report.xml"/>
                               </report>
                            </target>
                         </configuration>
@@ -1330,7 +1330,7 @@
                            </goals>
                         </pluginExecutionFilter>
                         <action>
-                           <ignore />
+                           <ignore/>
                         </action>
                      </pluginExecution>
                      <pluginExecution>
@@ -1351,7 +1351,7 @@
                            </goals>
                         </pluginExecutionFilter>
                         <action>
-                           <ignore />
+                           <ignore/>
                         </action>
                      </pluginExecution>
                   </pluginExecutions>
@@ -1534,7 +1534,7 @@
             <plugin>
                <groupId>org.codehaus.mojo</groupId>
                <artifactId>cobertura-maven-plugin</artifactId>
-               <configuration />
+               <configuration/>
                <executions>
                   <execution>
                      <goals>
@@ -1792,7 +1792,7 @@
             <artifactId>cobertura-maven-plugin</artifactId>
             <version>2.5.2</version>
             <configuration>
-               <check />
+               <check/>
                <formats>
                   <format>html</format>
                   <format>xml</format>
